@@ -7,7 +7,7 @@ import os
 SDD = pd.read_csv('Speed Dating Data.csv',encoding='ISO-8859-1')
 SD1 = SDD[["fun_o","shar_o","sports","tvsports","exercise","dining","museums","art","hiking","gaming","clubbing","reading","tv","theater","movies","concerts","music","shopping","yoga"]]
 #"sports","tvsports","exercise","dining","museums","art","hiking","gaming","clubbing","reading","tv","theater","movies","concerts","music","shopping","yoga"
-#双[[]] 中括号索引
+
 SD2 = SDD[["gender","fun_o","shar_o","sports","tvsports","exercise","dining","museums","art","hiking","gaming","clubbing","reading","tv","theater","movies","concerts","music","shopping","yoga"]]
 #print(SD1)
 SD3 = SDD[["gender","race_o","fun_o","shar_o","sports","tvsports","exercise","dining","museums","art","hiking","gaming","clubbing","reading","tv","theater","movies","concerts","music","shopping","yoga"]]
@@ -35,9 +35,9 @@ SDD_data=SDD_data.dropna()
 SD_test= np.array(SD_data)
 
 SDD_test=np.array(SDD_data)
-#设置类别为3
+#set the type as 3
 KMT=KMeans(n_clusters=3)#
-#将数据代入到聚类模型中
+#bring the data into the model
 kmt=KMT.fit(SD_test)
 
 SD_data["label"]=kmt.labels_
@@ -46,7 +46,7 @@ SD_data1=SD_data.loc[SD_data["label"] == 1]
 SD_data2=SD_data.loc[SD_data["label"] == 2]
 
 
-#绘制聚类结果的散点图
+#draw the cluster result in a scatter plot
 plt.title('test for Kmeans')
 plt.rc('font', family='STXihei', size=10)
 plt.scatter(SD_data0['fun_o'],SD_data0['shar_o'],50,color='#99CC01',marker='+',linewidth=2,alpha=0.8)
@@ -60,7 +60,7 @@ plt.grid(color='#95a5a6',linestyle='--', linewidth=1,axis='both',alpha=0.4)
 
 from sklearn.externals import joblib
 KMD=KMeans(n_clusters=3)#
-#将数据代入到聚类模型中
+#bring the data into the model
 kmd=KMD.fit(SDD_test)
 
 SDD_data["label"]=kmd.labels_
