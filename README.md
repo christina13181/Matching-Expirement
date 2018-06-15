@@ -3,4 +3,4 @@ Kmean.py was the code for designing a K-means model to classify 60 customers int
 
 Sub.py was the API code for developed an online web application collecting the customers’ data and showing the prediction results
 
-The code was written in python3 in Pycharm, and the packages include numpy, pandas,matplotlib.pyplot, and sklearn.cluster.
+The code was written in python3 in Pycharm, and the packages include numpy, pandas, matplotlib.pyplot, and sklearn.cluster.
